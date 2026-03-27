@@ -1,35 +1,74 @@
+import { Colors, FontSize, Spacing } from '@/constants/Colors';
+import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+function TabIcon({ name, label, focused, color }: { name: any; label: string; focused: boolean; color: string }) {
+  return (
+    <View style={styles.tabItem}>
+      <Ionicons name={name} size={22} color={focused ? color : Colors.textMuted} />
+      <Text style={[styles.tabLabel, { color: focused ? color : Colors.textMuted }]}>
+        {label}
+      </Text>
+    </View>
+  );
+}
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+        tabBarStyle: styles.tabBar,
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: Colors.teal,
+        tabBarInactiveTintColor: Colors.textMuted,
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ focused, color }) => (
+            <TabIcon name={focused ? 'home' : 'home-outline'} label="Home" focused={focused} color={Colors.teal} />
+          ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="good-habits"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ focused, color }) => (
+            <TabIcon name={focused ? 'leaf' : 'leaf-outline'} label="Build" focused={focused} color={Colors.teal} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="bad-habits"
+        options={{
+          tabBarIcon: ({ focused, color }) => (
+            <TabIcon name={focused ? 'shield' : 'shield-outline'} label="Break" focused={focused} color={Colors.red} />
+          ),
         }}
       />
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  tabBar: {
+    backgroundColor: Colors.surface,
+    borderTopColor: Colors.border,
+    borderTopWidth: 1,
+    height: 70,
+    paddingBottom: 8,
+    elevation: 0,
+  },
+  tabItem: {
+    alignItems: 'center',
+    gap: 3,
+    paddingTop: 6,
+  },
+  tabLabel: {
+    fontSize: FontSize.xs,
+    fontWeight: '600',
+  },
+});

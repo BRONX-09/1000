@@ -19,7 +19,8 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.x1000"
     },
     "web": {
       "output": "static",
@@ -37,6 +38,28 @@
           "dark": {
             "backgroundColor": "#000000"
           }
+        }
+      ],
+      [
+        "react-native-android-widget",
+        {
+          "widgets": [
+            {
+              "name": "UrgeWidget",
+              "label": "1000 Urge Button",
+              "minWidth": "100dp",
+              "minHeight": "100dp",
+              "description": "Quick access to resist your Urge",
+              "widgetFeatures": "reconfigurable"
+            },
+            {
+              "name": "DashboardWidget",
+              "label": "1000 Habit Dashboard",
+              "minWidth": "250dp",
+              "minHeight": "150dp",
+              "description": "Your daily habit checklist summary"
+            }
+          ]
         }
       ]
     ],
