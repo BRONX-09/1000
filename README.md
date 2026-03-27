@@ -1,50 +1,26 @@
-# Welcome to your Expo app 👋
+# 1000 — The Ultimate Habit Tracker
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to **1000**, your minimal, native Android habit tracker designed to help you break bad habits and build atomic routines entirely offline, directly from your Home Screen.
 
-## Get started
+## 🚀 Features
+- **Native Android Home Screen Widgets**: Monitor your streaks and log your urges without even opening the app.
+- **Urge Button Widget**: A vibrant red quick-access pill to actively resist and log your addictions in real-time.
+- **Dashboard Widget**: A quick overview of your daily check-in habits.
+- **100% Offline Architecture**: Your data never leaves your device and runs instantly using `AsyncStorage` and Native background threads.
+- **Dynamic Streak Tracking**: Automatically calculates your clean days and daily completions.
 
-1. Install dependencies
+## 📥 Get the Application
+The standalone Android Production APK for Version 1.0.0 is available!
+You can find the `1000-v1.0.0.apk` file included locally in the root of this project (if cloned) or attached directly to our GitHub Releases.
 
-   ```bash
-   npm install
-   ```
+**To Install the APK:**
+1. Download `1000-v1.0.0.apk` to your Android device.
+2. Tap the file to install (you may need to allow "Install from Unknown Sources" in your settings).
+3. Open "1000" from your App Drawer!
+4. Long-press your home screen to deploy the Widgets!
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 💻 Technical Architecture
+- Expo SDK 52 & React Compiler
+- React Native 0.81
+- Native Android `RemoteViews` integration via `react-native-android-widget`
+- Synchronous `AsyncStorage` 
